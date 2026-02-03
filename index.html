@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title> BridgeV2W </title>
+
+  <link rel="icon" href="./static/images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+  <link rel="stylesheet" href="./static/css/video-pager.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Font Awesome JS not needed when using CSS from CDN -->
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+  <script src="./static/js/video-pager.js" defer></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>
+
+
+  <style>
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
+    }
+
+    .title-ecflow {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+      font-weight: 700;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      padding-bottom: 0.2em;
+    }
+
+    .title-ecflow::after {
+      content: '';
+      position: absolute;
+      bottom: -22px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+      border-radius: 2px;
+    }
+
+    .title-ecflow img {
+      width: 1.5em;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    }
+  </style>
+
+</head>
+<body>
+
+  
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🏠</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://ec-flow1.github.io/">
+            <b>EC-Flow</b>
+          </a>
+          <a class="navbar-item" href="https://bridgevla.github.io/">
+            <b>BridgeVLA</b>
+          </a>
+          <a class="navbar-item" href="https://verm-ral.github.io/">
+            <b>VERM</b>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold" style="display: inline-flex; align-items: center; gap: 0.3em;">
+            <img src="static/images/logo.png" style="height:1.5em;width:auto;" alt="Logo"/>
+            <span class="bridgevla" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)">BridgeV2W</span>
+          </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Bridging Video Generation Models to Embodied World Models via Embodiment Masks
+          </h2>
+          
+          <!-- <h3 class="subtitle is-4 publication-subtitle"
+          style="font-weight: bold; margin-bottom: 20px; color: #b03030;">
+            Arxiv 2025
+          </h3> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://yixiang-chen.cn/" target="_blank" style="color: black;">Yixiang Chen</a><sup>1</sup><sup>,</sup><sup>2</sup></span>,
+            <span class="author-block"><a href="https://github.com/LPY1219" target="_blank" style="color: black;">Peiyan Li</a><sup>1</sup><sup>,</sup><sup>2</sup></span>,
+            <span class="author-block"><a href="https://jiabingyang.cn/" target="_blank" style="color: black;">Jiabing Yang</a><sup>1</sup><sup>,</sup><sup>2</sup><sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=RHPI-NQAAAAJ&hl=zh-CN&oi=ao" target="_blank" style="color: black;">Keji He</a><sup>3</sup></span>,
+            <span class="author-block"><a href="https://xiangnan-wu.github.io/" target="_blank" style="color: black;">Xiangnan Wu</a><sup>1</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=en&user=vzUBE0oAAAAJ" target="_blank" style="color: black;">Yuan Xu</a><sup>1</sup></span>,</sup><sup>2</sup><sup></sup>,
+            <span class="author-block"><a href="https://BridgeV2W.github.io/" target="_blank" style="color: black;">Kai Wang</a><sup>1</sup></span>,
+            <span class="author-block"><a href="https://orcid.org/0009-0008-1933-1471" target="_blank" style="color: black;">Jing Liu</a><sup>4</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=en&user=I-NXbwIAAAAJ" target="_blank" style="color: black;">Nianfeng Liu</a><sup>4</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=6nUJrQ0AAAAJ&hl=zh-CN" target="_blank" style="color: black;">Yan Huang</a><sup>1</sup><sup>,</sup><sup>2</sup><sup>,</sup><sup>4</sup><sup>†</sup></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=8kzzUboAAAAJ" target="_blank" style="color: black;">Liang Wang</a><sup>1</sup><sup>,</sup><sup>2</sup><sup>†</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors", style=" margin: 10px auto;", >
+            <span class="author-block"><sup>†</sup>Corresponding Author</span>
+          </div>
+  
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><a href="http://cripac.ia.ac.cn/en/EN/volumn/home.shtml" target="_blank" style="color: black;">CASIA-NLPR</a>,</span>
+            <span class="author-block"><sup>2</sup><a href="https://english.ucas.ac.cn/" target="_blank" style="color: black;">UCAS</a>,</span>
+            <span class="author-block"><sup>3</sup><a href="https://www.ai.sdu.edu.cn/index.htm" target="_blank" style="color: black;">Shandong University</a>,</span>
+            <span class="author-block"><sup>4</sup><a href="https://BridgeV2W.github.io/" target="_blank" style="color: black;">FiveAges</a></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://BridgeV2W.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://BridgeV2W.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://BridgeV2W.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> -->
+              <!-- Twitter Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🌐</p>
+                  </span>
+                  <span>Twitter</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TLDR Section -->
+<section class="section" style="padding-top: 1rem; padding-bottom: 1rem;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="tldr-box" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
+                                    border-left: 5px solid #4a90e2; 
+                                    padding: 20px; 
+                                    border-radius: 8px; 
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <h2 class="title is-4" style="color: #2c3e50; margin-bottom: 10px;">TL;DR:</h2>
+          <p class="is-size-5" style="color: #34495e; line-height: 1.6;">
+            BridgeV2W bridges pretrained video generation models to embodied world models via embodiment masks that align actions with pixel spaces,
+            while ensuring viewpoint robustness, embodiment-agnostic architectures, and effective reuse of pretrained visual and motion priors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video Section -->
+<!-- <div style="display: flex; justify-content: center; margin: 40px 0;">
+  <div style="width: 80%; max-width: 900px;">
+    <div style="box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background: #fff;">
+      <iframe 
+        width="100%" 
+        height="506" 
+        src="https://www" 
+        title="Demo Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div> -->
+
+<!-- Abstract Section -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Embodied world models have emerged as a promising paradigm in robotics, most of which leverage large-scale Internet videos or pretrained video generation models to enrich visual and motion priors. 
+            However, they still face key challenges: a misalignment between coordinate-space actions and pixel-space videos, sensitivity to camera viewpoint, and non-unified architectures across embodiments. 
+            To this end, we present BridgeV2W, which converts coordinate-space actions into pixel-aligned embodiment masks rendered from the URDF and camera parameters. 
+            These masks are then injected into a pretrained video generation model via a ControlNet-style pathway, which aligns the action control signals with predicted videos, 
+            adds view-specific conditioning to accommodate camera viewpoints, and yields a unified world model architecture across embodiments. To mitigate overfitting to static backgrounds, 
+            BridgeV2W further introduces a flow-based motion loss that focuses on learning dynamic and task-relevant regions. Experiments on single-arm (DROID) and dual-arm (AgiBot-G1) datasets, covering diverse and challenging conditions with unseen viewpoints and scenes, 
+            show that BridgeV2W improves video generation quality compared to prior state-of-the-art methods. We further demonstrate the potential of BridgeV2W on downstream real-world tasks, including policy evaluation and goal-conditioned planning.
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+
+<!-- Teaser Section -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <div class="box" style="margin-top: 0; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/teaser.png" alt="grade-lv" width="100%" style="max-width: 800px; height: auto;"/>
+              <p class="has-text-left">
+                <strong>Figure 1: </strong>BridgeV2W vs. previous methods. 
+                Pixel-aligned embodiment masks bridge video generation models to embodied world models,
+                addressing the action–video gap, improving viewpoint robustness, and yielding a unified architecture across embodiments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- METHOD SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Method</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            BridgeV2W is an action-conditioned embodied world model that predicts future videos from an initial image and an action sequence.
+            The core idea is to bridge actions into the visual domain by converting them into pixel-aligned embodiment masks and injecting them into a pretrained video diffusion model.
+          </p>
+          
+          <h4 class="title is-5 mt-5 mb-3">Action-to-Mask Conditioning</h4>
+          <p>
+            The action-to-mask conditioning module converts coordinate-space actions into pixel-aligned embodiment masks rendered from the URDF and camera parameters.
+          </p>
+
+          <ul style="margin-left: 1.5em;"> 
+            <li> 
+              <b>From Actions to Pixel-Space Masks:</b> 
+              BridgeV2W converts actions into temporally aligned embodiment masks in pixel space by simulating embodiment motion (e.g., via URDF) and projecting it onto the image plane. These masks explicitly indicate where the embodiment is expected to move at each timestep.
+              </li> 
+            <li> 
+              <b>Mask-Conditioned Video Diffusion:</b> 
+                  The mask sequence is injected into a pretrained image-to-video diffusion model through a ControlNet-style conditioning branch, guiding generation while preserving pretrained visual and motion priors. This design also supports settings without action annotations, where masks can be obtained directly from video segmentation.
+              </li> 
+          </ul>
+
+          <h4 class="title is-5 mt-5 mb-3">Motion-Centric Training Objectives</h4>
+          <p>
+            Standard diffusion losses supervise frames independently and may overlook temporal structure. 
+            To improve spatiotemporal consistency, BridgeV2W combines two motion-aware objectives:
+          </p>
+
+          <ul style="margin-left: 1.5em;"> 
+            <li> 
+              <b>Latent dynamics consistency,</b> 
+              which explicitly aligns temporal differences between predicted and ground-truth video latents across multiple time offsets, 
+              encouraging coherent long-horizon dynamics.
+              </li> 
+            <li> 
+              <b>Optical flow supervision,</b> 
+              which compares motion fields between predicted and ground-truth videos using a frozen flow estimator, 
+              focusing learning on embodiment and object motion rather than static backgrounds.
+              </li> 
+          </ul>
+
+          <div class="box" style="margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/network.png" alt="grade-lv" width="70%" style="max-width: 1000px; max-height: 600px;" />
+              <p class="has-text-left">
+                <strong>Figure 2: </strong>Overview of the BridgeV2W pipeline. 
+                Actions are projected into pixel-space masks using URDF and camera parameters. 
+                The initial image and mask sequence are encoded by VAE, with mask features injected via a ControlNet branch into the DiT backbone. 
+                The model generates action-consistent videos, trained with diffusion, dynamics-consistency, and flow-based objectives.
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- Video Prediction-->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Video Generation Capabilities</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <h2 class="title is-3 has-text-centered">DROID</h2>
+          <div class="video-pager" data-video-pager>
+            <button class="vp-btn vp-prev" type="button" aria-label="Previous">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+          
+            <div class="vp-viewport">
+              <div class="vp-track">
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/0.mp4" type="video/mp4" />
+                  </video>
+                </section>
+          
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/1.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/2.mp4" type="video/mp4" />
+                  </video>
+                </section>
+          
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/3.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/4.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/5.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/droid/6.mp4" type="video/mp4" />
+                  </video>
+                </section>
+              </div>
+            </div>
+          
+            <button class="vp-btn vp-next" type="button" aria-label="Next">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          
+            <!-- Dots indicator -->
+            <div class="vp-dots" data-vp-dots aria-label="Pagination"></div>
+          </div>
+          
+          <h2 class="title is-3 has-text-centered">AgiBot-G1</h2>
+          <div class="video-pager" data-video-pager>
+            <button class="vp-btn vp-prev" type="button" aria-label="Previous">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+          
+            <div class="vp-viewport">
+              <div class="vp-track">
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/0.mp4" type="video/mp4" />
+                  </video>
+                </section>
+          
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/1.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/2.mp4" type="video/mp4" />
+                  </video>
+                </section>
+          
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/3.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/4.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/5.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/6.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/7.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/8.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/g1/9.mp4" type="video/mp4" />
+                  </video>
+                </section>
+              </div>
+            </div>
+          
+            <button class="vp-btn vp-next" type="button" aria-label="Next">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          
+            <!-- Dots indicator -->
+            <div class="vp-dots" data-vp-dots aria-label="Pagination"></div>
+          </div>
+
+          <h2 class="title is-3 has-text-centered">Real-World</h2>
+          <div class="video-pager" data-video-pager>
+            <button class="vp-btn vp-prev" type="button" aria-label="Previous">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+          
+            <div class="vp-viewport">
+              <div class="vp-track">
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/0.mp4" type="video/mp4" />
+                  </video>
+                </section>
+          
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/1.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/2.mp4" type="video/mp4" />
+                  </video>
+                </section>
+          
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/3.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/4.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/5.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/6.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/7.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/8.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+
+                <section class="vp-page">
+                  <video class="vp-video" controls playsinline preload="metadata">
+                    <source src="static/videos/real/9.mp4" type="video/mp4" />
+                  </video>
+                </section>
+              </div>
+            </div>
+          
+            <button class="vp-btn vp-next" type="button" aria-label="Next">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          
+            <!-- Dots indicator -->
+            <div class="vp-dots" data-vp-dots aria-label="Pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Downstream Applications-->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Downstream Applications</h1>
+  </div>
+</section>
+
+<div class="columns is-variable is-4" style="max-width: 1500px; margin: 2rem auto; padding: 0 1rem;">
+  
+  <div class="column" style="flex: 0 0 50%; max-width: 50%;">
+    <div class="box" style="height: 100%;">
+      <h3 class="title is-5 has-text-centered" style="margin-bottom: 1rem;">Policy Evaluation</h3>
+      <div class="columns is-mobile">
+        <!-- Left Image 1 -->
+        <div class="column is-half">
+          <div class="content has-text-centered">
+            <img src="static/images/realworld_eval.png" alt="Figure 2"
+                 style="width: 40%; height: auto;" />
+            <p class="has-text-left" style="margin-top: 0.5rem; font-size: 0.9rem;">
+              <strong>Figure 3:</strong> Correlation between BridgeV2W evaluation and real-world success.
+            </p>
+          </div>
+        </div>
+        <!-- Left Image 2 -->
+        <div class="column is-half">
+          <div class="content has-text-centered">
+            <img src="static/images/policy_eval.png" alt="Table 1"
+                 style="width: 100%; height: auto;" />
+            <p class="has-text-left" style="margin-top: 0.5rem; font-size: 0.9rem;">
+              <strong>Table 1:</strong> Policy evaluation across tasks and baselines using BridgeV2W.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column" style="flex: 0 0 25%; max-width: 25%;">
+    <div class="box" style="height: 100%;">
+      <h3 class="title is-5 has-text-centered" style="margin-bottom: 1rem;">Goal-Image Conditioned Manipulation</h3>
+      <div class="content has-text-centered">
+        <img src="static/images/planning.png" alt="Table 2"
+             style="width: 90%; height: auto;" />
+        <p class="has-text-left" style="margin-top: 0.5rem; font-size: 0.9rem;">
+          <strong>Table 2:</strong> Real-world planning performance with BridgeV2W.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column" style="flex: 0 0 25%; max-width: 25%;">
+    <div class="box" style="height: 100%;">
+      <h3 class="title is-5 has-text-centered" style="margin-bottom: 1rem;">WM-Enhanced Closed-Loop Control</h3>
+      <div class="content has-text-centered">
+        <img src="static/images/closed_loop.png" alt="Table 2"
+             style="width: 90%; height: auto;" />
+        <p class="has-text-left" style="margin-top: 0.5rem; font-size: 0.9rem;">
+          <strong>Table 3:</strong> Real-World success rates with BridgeV2W + OpenVLA-OFT.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <pre><code>
+
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* Adjust padding to 5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* Code text color */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
+
